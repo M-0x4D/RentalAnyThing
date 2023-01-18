@@ -516,63 +516,112 @@ class ReservationsController
         function cash_on_delever(Request $request)
         {
                 $data = $request->all();
-                $rentals = Rental::where('object_id', $data['id'])->get();
-                if ($rentals->isNotEmpty()) {
-                        foreach ($rentals as $key => $rental) {
-                                Rental::where('object_id', $rental->object_id)->update(
-                                        [
-                                                'rental_status' => 'APPROVED',
 
-                                        ],
-                                );
-                        }
 
-                        foreach ($_SESSION['objects'] as $key => $value) {
-                                if ($value->id == $data['id']) {
-                                        $this->totalPrice = $value->totalPrice;
-                                }
-                        }
-                        $storeOrder = new StoreOrder();
-                        $storeOrder->storeV2([
-                                'id' => uniqid(),
-                                'address' => $request->user()->cAdressZusatz,
-                                'creationTime' => Carbon::now(),
-                                'totalAmount' => $this->totalPrice,
-                                'paymentMethod' => 'Cash on deliver'
+
+
+                $rental = CacheModel::where('customer_id', $request->user()->kKunde)->first();
+                if ($rental->object_id === $data['id']) {
+                        Rental::where('object_id' , $rental->object_id)->update([
+                                'quantity' => $rental->quantity,
+                                'total_amount' => $rental->total_amount,
+
                         ]);
+                }
+                else {
+                        Rental::create([
+                                'customer_id' => $rental->customer_id,
+                                'object_id' => $rental->object_id,
+                                'pickup_date' => $rental->pickup_date,
+                                'dropoff_date' => $rental->dropoff_date,
+                                'total_amount' => $rental->total_amount,
+                                'currency_id' => $rental->currency_id,
+                                'rental_status' => 'APPROVED',
+                                'order_id' => $rental->order_id,
+                                'quantity' => $rental->quantity
+                                
+                        ]);
+                }
 
-                        // client
-                        $clientName = userName();
-                        $ownerName = adminName();
-                        $clientBody = file_get_contents(__DIR__ . "/../../Support/Mail/ClientReserve.php");
-                        $clientBody = sprintf($clientBody, $clientName, $ownerName);
+                
 
-                        // admin
-                        $ownerBody = file_get_contents(__DIR__ . "/../../Support/Mail/OwnerReserve.php");
-                        $ownerBody = sprintf($ownerBody, $ownerName, $clientName);
-                        ob_start();
+                $objectTest = ObjectModel::where('id', $rental->object_id)->first();
+                if ($objectTest->quantity === 0) {
+                        ObjectModel::where('id', $rental->object_id)->update([
+                                'booked' => true,
+                                'quantity' => $objectTest->quantity - $rental->quantity
+                        ]);
+                } else {
+                        ObjectModel::where('id', $rental->object_id)->update([
+                                'quantity' => $objectTest->quantity - $rental->quantity
+                        ]);
+                }
 
-                        // send mail to client
-                        (new MailService(
-                                $request->user()->cMail,
-                                'Reservation',
-                                $clientBody
-                        ))->sendMail();
-
-                        // send mail to shop owner
-                        (new MailService(adminEmail(), 'Reservation', $ownerBody))->sendMail();
-                        ob_end_clean();
+                CacheModel::where('customer_id', $request->user()->kKunde)->delete();
 
 
-                        // delete from session
-                        foreach ($_SESSION['objects'] as $key => $value) {
 
-                                if ($value->id == $data['id']) {
-                                        unset($_SESSION['objects'][$key]);
-                                }
+
+                foreach ($_SESSION['objects'] as $key => $value) {
+                        if ($value->id == $data['id']) {
+                                $this->totalPrice = $value->totalPrice;
                         }
+                }
+                $storeOrder = new StoreOrder();
+                $storeOrder->storeV2([
+                        'id' => uniqid(),
+                        'address' => $request->user()->cAdressZusatz,
+                        'creationTime' => Carbon::now(),
+                        'totalAmount' => $this->totalPrice,
+                        'paymentMethod' => 'Cash on deliver'
+                ]);
+
+                // client
+                $clientName = userName();
+                $ownerName = adminName();
+                $clientBody = file_get_contents(__DIR__ . "/../../Support/Mail/ClientReserve.php");
+                $clientBody = sprintf($clientBody, $clientName, $ownerName);
+
+                // admin
+                $ownerBody = file_get_contents(__DIR__ . "/../../Support/Mail/OwnerReserve.php");
+                $ownerBody = sprintf($ownerBody, $ownerName, $clientName);
+                ob_start();
+
+                // send mail to client
+                (new MailService(
+                        $request->user()->cMail,
+                        'Reservation',
+                        $clientBody
+                ))->sendMail();
+
+                // send mail to shop owner
+                (new MailService(adminEmail(), 'Reservation', $ownerBody))->sendMail();
+                ob_end_clean();
+
+
+                // delete from session
+                foreach ($_SESSION['objects'] as $key => $value) {
+
+                        if ($value->id == $data['id']) {
+                                unset($_SESSION['objects'][$key]);
+                        }
+                }
+
+
+
+                // $rentals = Rental::where('object_id', $data['id'])->get();
+                // if ($rentals->isNotEmpty()) {
+                //         foreach ($rentals as $key => $rental) {
+                //                 Rental::where('object_id', $rental->object_id)->update(
+                //                         [
+                //                                 'rental_status' => 'APPROVED',
+
+                //                         ],
+                //                 );
+                //         }
+
+                       
 
                         return response()->json('test', 302);
                 }
-        }
 }
