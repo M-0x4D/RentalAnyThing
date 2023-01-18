@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<jtlshopplugin>
+    <Name>TecSeeProductsRentalBooking</Name>
+    <Description>TecSeeProductsRentalBooking is a jtl plugin which is used to create booking system for products.</Description>
+    <Author>Tecsee</Author>
+    <URL>https://tecsee.de/</URL>
+    <PluginID>TecSeeProductsRentalBooking</PluginID>
+    <XMLVersion>100</XMLVersion>
+    <ShopVersion>5.0.0</ShopVersion>
+    <Version>1.0.0</Version>
+    <CreateDate>2022-02-09</CreateDate>
+    <Install>
+        <FlushTags>CACHING_GROUP_CATEGORY, CACHING_GROUP_ARTICLE</FlushTags>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Object_Categories</Name>
+            </Customlink>
+            <Customlink sort="2">
+                <Name>Object_Colors</Name>
+            </Customlink>
+            <Customlink sort="3">
+                <Name>Object_Countries</Name>
+            </Customlink>
+            <Customlink sort="4">
+                <Name>Object_Provinces</Name>
+            </Customlink>
+            <Customlink sort="5">
+                <Name>Object_Cities</Name>
+            </Customlink>
+            <Customlink sort="6">
+                <Name>Currency</Name>
+            </Customlink>
+            <Customlink sort="7">
+                <Name>Objects</Name>
+            </Customlink>
+            <Customlink sort="8">
+                <Name>Main_Banner</Name>
+            </Customlink>
+            <Customlink sort="9">
+                <Name>Translations</Name>
+            </Customlink>
+            <Customlink sort="10">
+                <Name>Api_Credentials</Name>
+            </Customlink>
+        </Adminmenu>
+        <FrontendLink>
+            <Link>
+                <Name>rental</Name>
+                <Template>rental.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <LinkLanguage iso="ENG">
+                    <Seo>rental</Seo>
+                    <Name>rental</Name>
+                    <Title>rental</Title>
+                    <MetaTitle>rental</MetaTitle>
+                    <MetaKeywords>rental</MetaKeywords>
+                    <MetaDescription>rental</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="GER">
+                    <Seo>vermietung</Seo>
+                    <Name>vermietung</Name>
+                    <Title>vermietung</Title>
+                    <MetaTitle>vermietung</MetaTitle>
+                    <MetaKeywords>vermietung</MetaKeywords>
+                    <MetaDescription>vermietung</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <Link>
+                <Name>product-details</Name>
+                <Template>product-details.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <LinkLanguage iso="ENG">
+                    <Seo>product-details</Seo>
+                    <Name>product-details</Name>
+                    <Title>product-details</Title>
+                    <MetaTitle>product-details</MetaTitle>
+                    <MetaKeywords>product-details</MetaKeywords>
+                    <MetaDescription>product-details</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="GER">
+                    <Seo>produkt-details</Seo>
+                    <Name>produkt-details</Name>
+                    <Title>produkt-details</Title>
+                    <MetaTitle>produkt-details</MetaTitle>
+                    <MetaKeywords>produkt-details</MetaKeywords>
+                    <MetaDescription>produkt-details</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <Link>
+                <Name>my-rentals</Name>
+                <Template>my-rentals.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <LinkLanguage iso="ENG">
+                    <Seo>my-rentals</Seo>
+                    <Name>my-rentals</Name>
+                    <Title>my-rentals</Title>
+                    <MetaTitle>my-rentals</MetaTitle>
+                    <MetaKeywords>my-rentals</MetaKeywords>
+                    <MetaDescription>my-rentals</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="GER">
+                    <Seo>meine-vermietungen</Seo>
+                    <Name>Meine Vermietungen</Name>
+                    <Title>Meine Vermietungen</Title>
+                    <MetaTitle>Meine Vermietungen</MetaTitle>
+                    <MetaKeywords>meine-vermietungen</MetaKeywords>
+                    <MetaDescription>meine-vermietungen</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <Link>
+                <Name>process</Name>
+                <Template>process.tpl</Template>
+                <LinkLanguage iso="ENG">
+                    <Seo>process</Seo>
+                    <Name>process</Name>
+                    <Title>process</Title>
+                    <MetaTitle>process</MetaTitle>
+                    <MetaKeywords>process</MetaKeywords>
+                    <MetaDescription>process</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="GER">
+                    <Seo>prozess</Seo>
+                    <Name>process</Name>
+                    <Title>prozess</Title>
+                    <MetaTitle>prozess</MetaTitle>
+                    <MetaKeywords>process</MetaKeywords>
+                    <MetaDescription>process</MetaDescription>
+                </LinkLanguage>
+            </Link>
+        </FrontendLink>
+        <CSS>
+            <file>
+                <name>rental.css</name>
+                <priority>10</priority>
+            </file>
+            <file>
+                <name>jquery-ui.css</name>
+                <priority>10</priority>
+            </file>
+            <file>
+                <name>bootstrap-datepicker.css</name>
+                <priority>10</priority>
+            </file>
+            <file>
+                <name>timepickerAddon.css</name>
+                <priority>10</priority>
+            </file>
+        </CSS>
+        <JS>
+            <file>
+                <name>Fiberjs/Fiber.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>Fiberjs/JsonParseException.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>Fiberjs/ResponseException.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>jquery-ui.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>timepickerAddon.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>rental.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>search_request.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>toggle_request.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>helpers_functions_rental.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>rental_filters.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>rental_button.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>my_rentals.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>product_pick.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>price_range.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+            <file>
+                <name>custom_cart_function.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+        </JS>
+    </Install>
+</jtlshopplugin>

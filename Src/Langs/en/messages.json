@@ -1,0 +1,5 @@
+{
+    "success" : "was saved",
+    "unauthenticated" : "not authenticated",
+    "no_api_credentials" : "You have to store Api crderntials first."
+}

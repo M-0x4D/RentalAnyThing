@@ -1,0 +1,1533 @@
+// start some global roles
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+}
+
+.custom-search-btn {
+    background-color: #ff5ca3;
+    color: white;
+    padding: 0 10px;
+    text-align: center;
+    align-self: flex-end;
+    // border-radius: 30px;
+    border-radius: 5px;
+    min-width: 160px;
+
+    @media (max-width: 1025px) {
+        min-width: 155px;
+    }
+
+    height: 42px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: #25c6da;
+    }
+}
+
+.rental-container {
+    position: relative;
+}
+
+// end some global roles
+
+// ========================================================================================================================
+
+// start main-banner
+.car-main-banner {
+    width: 100%;
+    height: fit-content;
+    // background-color: #f3f3f3;
+    position: relative;
+    min-height: 200px;
+    // max-height: 75vh;
+
+    // @media (max-width: 1025px) {
+    //     max-height: fit-content;
+    // }
+
+    .banner-car-img-container {
+        flex-basis: 65%;
+
+        @media (max-width: 1025px) {
+            width: 100%;
+            flex-basis: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-banner-img {
+            // width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .banner-text-container {
+        flex-basis: 35%;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-size: 40px;
+            color: #212529;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1025px) {
+            align-items: flex-end;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            justify-content: center;
+
+            .child-text-div {
+                text-align: center;
+                padding-bottom: 20px;
+
+                h1 {
+                    font-size: 40px;
+                    color: white;
+                }
+
+                p {
+                    font-size: 30px;
+                }
+
+                @media (max-width: 768px) {
+                    h1 {
+                        font-size: 22px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// end main banner
+
+// ====================================================================
+
+// start search container
+.container-for-features-and-search {
+    background-color: #1565c0;
+    color: #ffffff;
+
+    @media (max-width: 769px) {
+        padding: 20px;
+    }
+
+    .fea-title {
+        font-size: 25px;
+        color: white;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        text-align: center;
+    }
+
+    .search-components-container {
+        .container-for-search {
+            @media (min-width: 769px) {
+                flex-basis: 18%;
+            }
+
+            @media (max-width: 768px) {
+                flex-basis: 49%;
+            }
+
+            @media (max-width: 480px) {
+                flex-basis: 100%;
+            }
+
+            label.font-weight-900 {
+                font-weight: 900;
+                font-size: 14px;
+            }
+
+            input {
+                border-radius: 5px !important;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                height: 43px;
+            }
+
+            .input-group {
+                overflow: hidden;
+                height: 42px;
+
+                span.custom-adding-style {
+                    position: absolute;
+                    width: 30px;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    // background-color: #25c6da;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 5px !important;
+                    z-index: 200;
+                    height: 42px;
+                    cursor: pointer;
+
+                    i {
+                        // color: white;
+                        color: #25c6da;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .custom-select-location {
+                display: block;
+                width: 100%;
+                padding: 0 5px;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #212529;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                height: 38px;
+                cursor: pointer;
+                border-radius: 5px !important;
+                height: 43px;
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+        }
+
+        .btn-custom#send-se-par {
+            // width: 100px;
+            flex-basis: 50%;
+            margin: 5px auto;
+
+            @media (max-width: 768px) {
+                // flex-basis: 49%;
+                flex-basis: 100%;
+                margin-top: 10px;
+            }
+
+            @media (max-width: 480px) {
+                flex-basis: 100%;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    // ======================== small barrier
+
+    .features-title-and-content {
+        .fea-title {
+            font-size: 25px;
+            color: white;
+            font-weight: 900;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        // =========== small barrier
+
+        .features-box-container {
+            // margin-top: 25px;
+            color: white;
+            gap: 30px;
+            display: flex;
+            align-items: center;
+
+            .fea-box {
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                height: fit-content;
+
+                @media (min-width: 1201px) {
+                    flex-basis: 31%;
+                }
+
+                @media (max-width: 1200px) {
+                    flex-basis: 31%;
+                }
+
+                @media (max-width: 1024px) {
+                    flex-basis: 30%;
+                }
+
+                @media (max-width: 768px) {
+                    flex-basis: 100%;
+                    flex-direction: column;
+                }
+
+                .icon-parent {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    background-color: #25c6da;
+                    flex-basis: 40px;
+
+                    i {
+                        font-size: 18px;
+                        font-weight: bolder;
+                    }
+                }
+
+                .fea-desc {
+                    margin: 0;
+                    font-size: 15px;
+                    flex-basis: 88%;
+                    padding-left: 10px;
+
+                    @media (max-width: 768px) {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// end search container
+
+// ========================================================================================================================
+
+// start work in search results
+.parent-for-container-search-results {
+    display: none;
+    transform: scaleY(0);
+    transform-origin: center top;
+
+    &.active {
+        display: block;
+        transform: scaleY(1);
+    }
+
+    // &.remove-element {
+    //     display: none !important;
+    // }
+
+    .container-for-search-results {
+        background-color: #e8e8e8;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .title-and-results-container {
+            flex-basis: 74%;
+            gap: 20px;
+
+            .title-box {
+                background-color: white;
+                align-items: center;
+                padding: 10px;
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: bolder;
+                    margin-bottom: 0;
+                }
+
+                .price-filter {
+                    gap: 10px;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 20px;
+                    border-left: 1px solid rgba(0, 0, 0, 0.2);
+                    border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+                    .text-box {
+                        height: fit-content;
+                        font-size: 15px;
+                    }
+
+                    .icon-box {
+                        i {
+                            color: #777;
+                            font-size: 22px;
+                            line-height: 15px;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+
+                // ===== small barrier =====
+
+                .view-type-icons-parent {
+                    gap: 5px;
+
+                    .icon-up {
+                        padding: 5px;
+                        background-color: #ccc;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+
+                        &.active,
+                        &:hover {
+                            background-color: #25c6da;
+                        }
+
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // ======================== small barrier
+
+        .results-container {
+            background-color: #e8e8e8;
+            gap: 20px;
+
+            .result-box {
+                background-color: white;
+                height: 160px;
+                padding: 10px;
+                width: 100%;
+
+                @media (max-width: 768px) {
+                    height: fit-content;
+                }
+
+                .img-box {
+                    width: 200px;
+                    height: 100%;
+
+                    @media (max-width: 768px) {
+                        width: 100%;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+
+                        // @media (max-width: 768px) {
+                        //     height: 258px;
+                        // }
+                    }
+                }
+
+                // ======================== small barrier
+
+                .car-details {
+                    flex-grow: 1;
+                    padding: 10px;
+
+                    @media (max-width: 768px) {
+                        padding-bottom: 5px;
+                    }
+
+                    @media (max-width: 768px) {
+                        flex-direction: column;
+                    }
+
+                    .main-details {
+                        flex-basis: 70%;
+
+                        @media (max-width: 768px) {
+                            flex-basis: 100%;
+                            width: 100%;
+                        }
+
+                        .one-up {
+                            @media (max-width: 768px) {
+                                padding-bottom: 15px;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: black;
+                                font-size: 17px;
+                                font-weight: 900;
+                                padding: 0;
+
+                                &:hover {
+                                    color: #25c6da;
+                                }
+                            }
+
+                            span {
+                                font-size: 14px;
+                                color: #999;
+                            }
+                        }
+
+                        .all-icon-box {
+                            color: #777;
+                            font-size: 15px;
+                            gap: 2px;
+
+                            i {
+                                font-size: 17px;
+                                margin-right: 2px;
+                            }
+
+                            @media (max-width: 768px) {
+                                padding: 15px 0;
+                                border-top: 1px solid rgba(0, 0, 0, 0.2);
+                                // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                                // margin: 15px 0;
+                                width: 100%;
+                            }
+                        }
+
+                        .rant-price-up-on-small {
+                            display: none;
+                            font-weight: lighter;
+
+                            gap: 10px;
+
+                            @media (max-width: 768px) {
+                                padding-top: 15px;
+                                padding-bottom: 15px;
+                            }
+
+                            span {
+                                font-weight: 900;
+                            }
+
+                            @media (max-width: 768px) {
+                                display: block;
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                                border-top: 1px solid rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    }
+
+                    // ======================== small barrier
+
+                    .book-price {
+                        flex-basis: 30%;
+                        padding: 0 20px;
+                        border-left: 1px solid #999;
+
+                        @media (max-width: 768px) {
+                            border-left: none;
+                        }
+
+                        .rant-price-up {
+                            font-weight: lighter;
+                            font-size: 14px;
+                            text-align: center;
+
+                            .rant-price {
+                                color: black;
+                                font-size: 19px;
+                                font-weight: 900;
+                            }
+
+                            @media (max-width: 768px) {
+                                display: none !important;
+                            }
+                        }
+
+                        .car-rent-on-click {
+                            background-color: #ff5ca3;
+                            padding: 10px;
+                            width: 100px;
+                            border-radius: 30px;
+                            color: white;
+                            font-size: 14px;
+                            font-weight: bolder;
+                            margin-top: 10px;
+
+                            @media (max-width: 768px) {
+                                margin-top: 15px;
+                            }
+
+                            &:hover {
+                                background-color: #25c6da;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.table-view {
+                display: flex;
+                justify-content: center;
+
+                .result-box {
+                    display: flex;
+                    flex-direction: column;
+                    flex-basis: 31%;
+
+                    @media (max-width: 1025px) {
+                        flex-basis: 48%;
+                    }
+
+                    @media (max-width: 768px) {
+                        flex-basis: 100%;
+                    }
+
+                    height: fit-content;
+
+                    .img-box {
+                        width: 100%;
+                        height: initial;
+
+                        // img {
+                        //     // @media (min-width: 1025) {
+                        //     //     height: 258px;
+                        //     // }
+
+                        //     @media (max-width: 768px) {
+                        //         height: 100%;
+                        //     }
+                        // }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            min-height: 180px;
+
+                            @media (max-width: 768px) {
+                                min-height: 220px;
+                                height: fit-content;
+                            }
+
+                            @media (max-width: 1025px) {
+                                height: 294px;
+                            }
+
+                            @media (min-width: 1200px) {
+                                height: 220px;
+                            }
+                        }
+                    }
+
+                    .car-details {
+                        flex-direction: column;
+                        padding-bottom: 5px;
+
+                        .one-up {
+                            padding-bottom: 15px;
+                        }
+
+                        .all-icon-box {
+                            padding: 15px 0;
+                            border-top: 1px solid rgba(0, 0, 0, 0.2);
+                            // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                            // margin: 15px 0;
+                            width: 100%;
+
+                            i {
+                                font-size: 17px;
+                                margin-right: 2px;
+                            }
+                        }
+
+                        .rant-price-up-on-small {
+                            display: block;
+                            border-top: 1px solid rgba(0, 0, 0, 0.2);
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                            padding-top: 15px;
+                            padding-bottom: 15px;
+                        }
+
+                        .book-price {
+                            border-left: none;
+
+                            .rant-price-up {
+                                display: none !important;
+                            }
+
+                            .car-rent-on-click {
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // =================================================================== big barrier
+
+        .a-side-filter-container {
+            flex-basis: 23%;
+            height: fit-content;
+            background-color: white;
+            padding: 15px;
+            align-self: flex-end;
+
+            .filters-title {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            // ======================== small barrier
+
+            .radio-filters-container {
+                gap: 20px;
+
+                .container-for-checkbox {
+                    @media (max-width: 1024px) {
+                        & {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 20px;
+                            justify-content: space-between;
+                        }
+                    }
+
+                    .box-one {
+                        @media (max-width: 1024px) {
+                            & {
+                                flex-basis: 30%;
+                            }
+                        }
+
+                        @media (max-width: 768px) {
+                            & {
+                                flex-basis: 47%;
+                            }
+                        }
+
+                        span.title {
+                            font-size: 16px;
+                            color: black;
+                            font-weight: bold;
+                            padding-bottom: 9px;
+                            display: block;
+                        }
+
+                        .container-input {
+                            display: block;
+                            position: relative;
+                            padding-left: 25px;
+                            margin-bottom: 5px;
+                            cursor: pointer;
+                            font-size: 16px;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+
+                            &:hover input ~ .checkmark {
+                                background-color: #ccc;
+                            }
+
+                            input {
+                                position: absolute;
+                                opacity: 0;
+                                cursor: pointer;
+                                height: 0;
+                                width: 0;
+
+                                &:checked ~ .checkmark:after {
+                                    display: block;
+                                }
+                            }
+
+                            .checkmark {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 20px;
+                                width: 20px;
+                                background-color: #eee;
+                                border-radius: 5px;
+
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    display: none;
+                                }
+
+                                &::after {
+                                    left: 9px;
+                                    top: 5px;
+                                    width: 5px;
+                                    height: 10px;
+                                    border: solid #25c6da;
+                                    border-width: 0 3px 3px 0;
+                                    -webkit-transform: rotate(45deg);
+                                    -ms-transform: rotate(45deg);
+                                    transform: rotate(45deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ======================== small barrier
+
+            .custom-change {
+                width: 100%;
+
+                @media (max-width: 1024px) {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+
+                @media (max-width: 480px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        // ======================== media query
+
+        @media (max-width: 1024px) {
+            .title-and-results-container,
+            .a-side-filter-container {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+
+// =======================
+
+#no-results-found-for-rental,
+#error-found-for-rental {
+    height: 100px;
+    background-color: #1565c0;
+    display: none;
+    transform: scaleY(0);
+    transform-origin: center top;
+
+    &.active {
+        display: block;
+        transform: scaleY(1);
+    }
+
+    .child-div-error {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        p {
+            margin: 0;
+            font-size: 22px;
+            text-align: center;
+            color: #ff5ca3;
+        }
+    }
+}
+
+// end work in search results
+
+// ===============================================================================================
+// ============================ work in new style for car details bag ============================
+// ===============================================================================================
+
+// start work in summary details
+.summary-car-details {
+    background-color: #e8e8e8;
+    gap: 20px;
+
+    .main-car-img-and-data {
+        flex-basis: 74%;
+        gap: 20px;
+
+        @media (max-width: 1063px) {
+            flex-basis: 100%;
+        }
+
+        .containor-of-img {
+            img {
+                width: 100%;
+            }
+        }
+
+        // ======================== small barrier
+
+        .all-car-data-and-details {
+            // background-color: white;
+            gap: 20px;
+
+            @media (max-width: 1063px) {
+                flex-wrap: wrap;
+                gap: 0;
+            }
+
+            .all-details-categorize {
+                // flex-basis: 22%;
+                width: fit-content;
+
+                @media (max-width: 1063px) {
+                    flex-direction: row;
+                    display: flex;
+                    width: 100%;
+                }
+
+                .cate {
+                    background-color: #ddd;
+                    color: #424242;
+                    // width: 100px;
+                    // height: 50px;
+                    padding-left: 20px;
+                    display: flex;
+                    align-items: center;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+
+                    width: 170px;
+                    font-weight: bolder;
+                    font-size: 18px;
+                    height: 50px;
+                    position: relative;
+                    cursor: pointer;
+
+                    @media (max-width: 1063px) {
+                        display: flex;
+                        padding: 0;
+                        justify-content: center;
+                    }
+
+                    &.border-only {
+                        border-top: 1px solid #ccc;
+                        border-bottom: 1px solid #ccc;
+
+                        @media (max-width: 1063px) {
+                            & {
+                                border-top: unset;
+                                border-bottom: unset;
+                                border-left: 1px solid #ccc;
+                                border-right: 1px solid #ccc;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: #26c6da;
+                        color: #fff;
+                    }
+
+                    &.active {
+                        background: #26c6da;
+                        color: #fff;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            right: -50px;
+                            border: 25px solid #26c6da;
+                            border-top-color: transparent;
+                            border-bottom-color: transparent;
+                            border-right-color: transparent;
+                            z-index: 5;
+                        }
+
+                        @media (max-width: 1063px) {
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                right: unset;
+                                transform: translateX(-50%);
+                                bottom: -50px;
+                                border: 25px solid #26c6da;
+                                border-left-color: transparent;
+                                border-bottom-color: transparent;
+                                border-right-color: transparent;
+                            }
+                        }
+                    }
+
+                    @media (max-width: 1063px) {
+                        flex-basis: calc(100% / 3);
+                        width: calc(100% / 3);
+                    }
+                }
+            }
+
+            // ======================== small barrier
+
+            .all-description-boxes {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                flex-grow: 1;
+
+                .description-box-container {
+                    background-color: white;
+                    padding: 20px;
+
+                    label {
+                        cursor: default;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 0 5px;
+                        cursor: default;
+                    }
+
+                    @media (max-width: 768px) {
+                        padding: 20px 5px;
+                    }
+
+                    // display: flex;
+                    // flex-direction: column;
+                    // gap: 20px;
+                    display: none;
+                    transform: scale(0);
+                    transform-origin: left top;
+                    // transition: all 0.3s linear;
+
+                    &.active {
+                        display: block;
+                        animation: "to-show" 0.3s linear forwards;
+                    }
+
+                    @keyframes to-show {
+                        0% {
+                            transform: scale(0);
+                        }
+
+                        100% {
+                            transform: scale(1);
+                            display: block;
+                        }
+                    }
+
+                    // ===========
+
+                    &:nth-child(1) {
+                        div.all-car-data-tables {
+                            .car-table-box {
+                                h2 {
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                    color: #263238;
+                                    margin: 20px 0;
+                                }
+
+                                p {
+                                    font-size: 17px;
+                                }
+
+                                table.car-Item-price {
+                                    border: 1px solid #aaa;
+                                    margin: 20px 0;
+                                    padding: 10px;
+                                    width: 100%;
+
+                                    th {
+                                        background: rgba(0, 0, 0, 0.03);
+                                        border: 1px solid #aaa;
+                                    }
+
+                                    th,
+                                    td {
+                                        padding: 15px;
+                                        border: 1px solid #aaa;
+
+                                        // width: 100px;
+                                        min-width: 100px;
+                                        max-width: 250px;
+
+                                        @media (max-width: 768px) {
+                                            min-width: 0;
+                                            max-width: fit-content;
+                                            width: fit-content;
+                                            padding: 5px;
+                                        }
+
+                                        &:not(:first-child) {
+                                            text-align: center;
+                                        }
+
+                                        select {
+                                            padding: 15px;
+                                            border-radius: 5px;
+                                            border: 1px solid #aaa;
+                                            width: 80px;
+                                        }
+                                    }
+
+                                    td {
+                                        h3 {
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                        }
+
+                                        p {
+                                            font-size: 15px;
+                                            color: #aaa;
+                                        }
+
+                                        &.combonent-rent-price {
+                                            font-weight: 900;
+                                            color: #212529;
+                                        }
+                                    }
+                                }
+
+                                // ===========
+
+                                table.car-summary-table {
+                                    border: 1px solid #aaa;
+                                    margin: 20px 0;
+                                    padding: 10px;
+                                    width: 100%;
+
+                                    tr {
+                                        font-size: 17px;
+
+                                        td {
+                                            border: 1px solid #aaa;
+                                            padding: 15px;
+
+                                            &:first-child {
+                                                background-color: rgba(0, 0, 0, 0.03);
+                                                width: 40%;
+                                            }
+
+                                            &.combonent-rent-price {
+                                                font-weight: 900;
+                                                color: #212529;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // ===========
+
+                                &:last-of-type {
+                                    margin-top: 50px;
+                                }
+                            }
+                        }
+
+                        // =================
+
+                        .hidn-table-price-breakdown {
+                            #brice-breakdown {
+                                color: #25c6da;
+                                cursor: pointer;
+                                text-align: right;
+                                font-weight: bolder;
+                                font-size: 18px;
+
+                                @media (max-width: 768px) {
+                                    text-align: center;
+                                }
+
+                                &:hover {
+                                    color: #ff5ca3;
+                                }
+                            }
+
+                            .brice-breakdown {
+                                transform-origin: top center;
+                                transform: scaleY(0);
+                                transition: all 0.3s linear;
+                                display: none;
+
+                                &.active {
+                                    display: block;
+                                    animation: "to-show" 0.3s linear forwards;
+                                }
+
+                                @keyframes to-show {
+                                    0% {
+                                        transform: scale(0);
+                                    }
+
+                                    100% {
+                                        transform: scale(1);
+                                        display: block;
+                                    }
+                                }
+
+                                .car-table-box {
+                                    p {
+                                        font-size: 17px;
+                                    }
+
+                                    table {
+                                        border: 1px solid #aaa;
+                                        margin: 20px 0;
+                                        padding: 10px;
+                                        width: 100%;
+                                        margin: 0;
+
+                                        th {
+                                            background: rgba(0, 0, 0, 0.03);
+                                            border: 1px solid #aaa;
+                                        }
+
+                                        th,
+                                        td {
+                                            padding: 15px;
+                                            border: 1px solid #aaa;
+
+                                            @media (max-width: 768px) {
+                                                min-width: 0;
+                                                max-width: fit-content;
+                                                width: fit-content;
+                                                padding: 5px;
+                                            }
+
+                                            &:not(:first-child) {
+                                                text-align: center;
+                                            }
+
+                                            select {
+                                                padding: 15px;
+                                                border-radius: 5px;
+                                                border: 1px solid #aaa;
+                                                width: 80px;
+                                            }
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        margin-top: 30px;
+                                    }
+                                }
+                            }
+                        }
+
+                        // ===========
+
+                        .action-button-box {
+                            button.custom-button-action {
+                                width: fit-content;
+                                padding: 5px;
+
+                                @media (max-width: 768px) {
+                                    height: 42px;
+                                }
+                            }
+                        }
+                    }
+
+                    // ===========
+
+                    &:nth-child(2) {
+                        .upper-box-container {
+                            h2 {
+                                font-weight: bolder;
+                                font-size: 23px;
+                                margin-bottom: 20px;
+                                color: #263238;
+                            }
+
+                            p {
+                                line-height: 1.7;
+                            }
+                        }
+
+                        .lower-box-container {
+                            p {
+                                display: flex;
+                                margin: 0;
+                                padding-top: 20px;
+                                font-size: 17px;
+
+                                &:not(:last-of-type) {
+                                    // border-top: 1px solid rgba(0, 0, 0, 0.2);
+                                    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                                    padding-bottom: 20px;
+                                }
+
+                                span.fi {
+                                    flex-basis: 35%;
+                                    font-weight: 400;
+                                }
+
+                                span.sec {
+                                    flex-basis: 65%;
+                                    font-weight: 800;
+                                }
+                            }
+                        }
+                    }
+
+                    // ===========
+
+                    &:nth-child(3) {
+                        h2 {
+                            font-size: 22px;
+                            font-weight: bolder;
+                            margin-bottom: 15px;
+                        }
+
+                        ul {
+                            padding-left: 21px;
+                            margin: 0;
+
+                            li {
+                                font-size: 17px;
+                                margin-bottom: 5px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ======================== small barrier
+
+    .all-text-on-details {
+        flex-basis: 24%;
+        gap: 20px;
+        flex-direction: column;
+        display: flex;
+
+        @media (max-width: 1063px) {
+            flex-basis: 100%;
+        }
+
+        .main-details-on-summary,
+        .all-features-to-book-container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            // gap: 20px;
+            background-color: white;
+            height: fit-content;
+
+            div.de-no-border {
+                h2.car-name-on-details {
+                    font-weight: 900;
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+
+                span.manifacture-type {
+                    color: #999;
+                    font-size: 12px;
+                }
+
+                &.all-icon-box {
+                    font-size: 13px;
+                    color: #858585;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+
+                    i {
+                        font-size: 17px;
+                        margin-right: 2px;
+                    }
+                }
+            }
+
+            div.de-border {
+                padding: 15px 0;
+                margin: 15px 0;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+
+                &.rant-price-up-on-small {
+                    font-size: 15px;
+                    font-weight: 300;
+                    font-size: 15px;
+
+                    span.rant-price {
+                        color: black;
+                        font-size: 15px;
+                        font-weight: 700;
+                        padding-left: 10px;
+                    }
+                }
+
+                a.link-of-car-type {
+                    display: inline-block;
+                    padding: 5px 5px 5px 20px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    text-decoration: none;
+                    color: black;
+                    width: fit-content;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    position: relative;
+                    font-size: 13px;
+                    font-weight: bolder;
+
+                    &::before {
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        background: #fff;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 7px;
+                        box-shadow: inset 1px 1px 1px rgb(0, 0, 0/ 30%);
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            div.custom-de-border {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+
+            button.btn-in-car-de {
+                width: 100%;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 700;
+                height: 50px;
+            }
+        }
+
+        // =============
+
+        .all-features-to-book-container {
+            h4.title-on-book {
+                font-size: 18px;
+                margin-bottom: 14px;
+                padding-bottom: 13px;
+                color: #263238;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                font-weight: 900;
+            }
+
+            .features-to-book-container {
+                h5 {
+                    color: #26c6da;
+                    font-size: 16px;
+                    font-weight: 800;
+                }
+
+                p {
+                    font-size: 15px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// end work in summary details
+
+// ================================================
+
+// start work in popup
+.pop-up-container {
+    // height: 100vh;
+    // width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1500;
+
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+
+    .pop-up-content-parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+
+        .pop-up-content {
+            width: 400px;
+            height: 300px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #fff;
+            color: #545454;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            // transform: scaleY(0);
+
+            img {
+                width: 90px;
+            }
+
+            div.button-up-up {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                p {
+                    color: #545454;
+                    margin-bottom: 15px;
+                    font-size: 20px;
+                    text-align: center;
+                }
+
+                .pop-up-button {
+                    background-color: #ff5ca3;
+                    border-radius: 5px;
+                    font-size: 19px;
+                    font-weight: bold;
+                    padding: 10px;
+                    color: white;
+                    margin: 0 5px;
+
+                    &:last-child {
+                        background-color: #25c6da;
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+        // animation: toShow 1s timing-function delay iteration-count direction fill-mode;
+        display: block;
+    }
+}
+// end work in popup
+
+.font-table-price {
+    font-weight: bold;
+    font-size: 18px;
+}

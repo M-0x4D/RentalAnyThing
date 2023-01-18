@@ -1,0 +1,5 @@
+{
+    "success" : "wurde gespeichert",
+    "unauthenticated" : "nicht authentifiziert",
+    "no_api_credentials" : "Sie müssen zuerst Api-Daten speichern."
+}
